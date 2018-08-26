@@ -1,34 +1,3 @@
-# Simulate Register Module By Servlet
-
-## Description
-
-本项目主要通过模拟注册功能模块，来回顾Java Web开发中Servlet。
-
-其中使用c3po作为数据库连接池。使用commons-dbutils、commons-beanutils来装载实体类，同时操作JDBC。
-
-## Required
-
-1. c3p0
-2. commons-dbutils
-3. commons-beanutils
-4. mysql-connector-java
-
-## Resources
-
->c3p0.properties  
-c3p0可以自动解析该文件，并配置到数据源中  
-**NOTE:** 属性名和文件名一定要固定，且该文件最后应在classpath下
-
-```properties
-c3p0.driverClass=com.mysql.jdbc.Driver
-c3p0.jdbcUrl=jdbc:mysql://localhost:3306/simulate
-c3p0.user=root
-c3p0.password=mypassword
-```
-
-## Util
-
-```java
 package com.test.register.util;
 
 import java.sql.Connection;
@@ -129,16 +98,3 @@ public class DataSourceUtils {
 	}
 
 }
-```
-
-```java
-new ComboPooledDataSource(String configName)
-//指定具体配置文件 若配置的名字找不到,使用默认的配置
-```
-
-## Reference
-
-1. [C3P0的三种配置方式以及基本配置项详解](https://blog.csdn.net/u012506661/article/details/53548083)
-2. [DataSourceUtils（使用C3P0连接池的工具类）](https://www.cnblogs.com/NEWHOM/p/6679272.html#commentform)
-
-
